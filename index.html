@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paid Search Pod | Performance Teams for Agencies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1C2D',
+            slate: '#5F6B7A',
+            accent: '#2563EB'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-navy font-sans">
+
+  <!-- Header -->
+  <header class="border-b border-slate/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-lg font-semibold">Paid Search Pod</div>
+      <nav class="hidden md:flex gap-8 text-sm text-slate">
+        <a href="#">Home</a>
+        <a href="#">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Case studies</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="bg-accent text-white px-5 py-2 rounded text-sm">Book fit call</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+        Paid Search Pod for Performance Teams for Agencies
+      </h1>
+      <p class="mt-6 text-lg text-slate">
+        Dedicated Google Ads execution pods.
+        Run by one senior owner.
+        Staffed with trained specialists.
+      </p>
+      <p class="mt-4 text-lg text-slate">
+        You scale delivery.
+        You avoid hiring risk.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a href="#" class="bg-accent text-white px-6 py-3 rounded text-sm">Book a fit call</a>
+        <a href="#pricing" class="border border-slate/30 px-6 py-3 rounded text-sm">View pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="font-semibold">Single owner</h3>
+      <p class="mt-2 text-slate">One accountable senior strategist per pod. No handoffs.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold">Execution team</h3>
+      <p class="mt-2 text-slate">Juniors handle builds, QA, pacing, and reporting.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold">Agency first</h3>
+      <p class="mt-2 text-slate">White label delivery. Your brand stays front and center.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-slate/5">
+    <div class="max-w-7xl mx-auto px-6 py-24">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <h2 class="text-3xl font-semibold">Pod pricing</h2>
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-slate">Standard</span>
+          <button id="toggleBtn" class="w-12 h-6 bg-slate/30 rounded-full relative">
+            <span id="toggleDot" class="w-5 h-5 bg-white rounded-full absolute left-1 top-0.5 transition"></span>
+          </button>
+          <span class="text-slate">Agency bundle</span>
+        </div>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <div class="border border-slate/20 rounded p-8">
+          <h3 class="font-semibold">Core Pod</h3>
+          <p class="mt-2 text-slate">1 Senior owner. 1 Specialist.</p>
+          <p class="mt-6 text-3xl font-bold price" data-standard="3500" data-bundle="3200">$3,500</p>
+          <p class="text-slate text-sm">per month</p>
+        </div>
+        <div class="border border-accent rounded p-8">
+          <h3 class="font-semibold">Growth Pod</h3>
+          <p class="mt-2 text-slate">1 Senior owner. 2 Specialists.</p>
+          <p class="mt-6 text-3xl font-bold price" data-standard="5000" data-bundle="4600">$5,000</p>
+          <p class="text-slate text-sm">per month</p>
+        </div>
+        <div class="border border-slate/20 rounded p-8">
+          <h3 class="font-semibold">Scale Pod</h3>
+          <p class="mt-2 text-slate">1 Senior owner. 3 Specialists.</p>
+          <p class="mt-6 text-3xl font-bold price" data-standard="6500" data-bundle="5900">$6,500</p>
+          <p class="text-slate text-sm">per month</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-sm text-slate">Bundle pricing applies to multi pod or long term engagements.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="bg-navy text-white rounded p-12">
+      <h2 class="text-3xl font-semibold">Built for agency operators</h2>
+      <p class="mt-4 text-slate-200">Add delivery capacity in days. Remove it anytime.</p>
+      <a href="#" class="inline-block mt-8 bg-white text-navy px-6 py-3 rounded text-sm">Book a fit call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate/20">
+    <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-slate flex flex-col md:flex-row justify-between gap-2">
+      <p>© 2025 Paid Search Pod</p>
+      <p>Powered by KaizenStrategy Solutions LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const toggleDot = document.getElementById('toggleDot');
+    const prices = document.querySelectorAll('.price');
+    let bundled = false;
+
+    toggleBtn.addEventListener('click', () => {
+      bundled = !bundled;
+      toggleDot.style.left = bundled ? '1.75rem' : '0.25rem';
+      prices.forEach(price => {
+        const value = bundled ? price.dataset.bundle : price.dataset.standard;
+        price.textContent = `$${Number(value).toLocaleString()}`;
+      });
+    });
+  </script>
+
+</body>
+</html>
